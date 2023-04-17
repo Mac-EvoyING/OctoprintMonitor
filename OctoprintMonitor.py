@@ -30,10 +30,6 @@ tool0 = []
 time_data = []
 
 def signal_handler(sig, frame):
-	df["Bed"] = bed
-	df["tool0"] = tool0
-	df["Time"] = time_data
-	df.to_csv("OctoPrintData.csv")
 	sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
@@ -59,8 +55,6 @@ def GetStatus():
 while(True):
 
 	GetStatus()
-	print('\rBed:{}ºC tool0:{}ºC time:{}s state:{}'.format(i["bed"]["actual"], i["tool0"]["actual"], i["time"],data["state"]["text"]), end='', flush=True)
-	
 	time.sleep(1)
 
 
