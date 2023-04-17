@@ -1,0 +1,16 @@
+[Unit]
+Description = Test python script
+#After = network.target 
+ 
+[Service]
+Type = simple
+ExecStart = python3 /home/pi/OctoprintMonitor/OctoprintMonitor/OctoprintMonitor.py
+#User = pi
+#Group = # Group to run the script as
+Restart = on-failure 
+#SyslogIdentifier = <Name of logs for the service>
+RestartSec = 5
+TimeoutStartSec = infinity
+ 
+[Install]
+WantedBy = multi-user.target 
