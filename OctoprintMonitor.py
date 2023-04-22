@@ -53,6 +53,7 @@ def GetStatus():
 	global status
 	global bed
 	global battery
+	global job
 	try:
 		response = s.get(url_status, headers=headers,verify=False, timeout=0.8)
 		data = response.json()
